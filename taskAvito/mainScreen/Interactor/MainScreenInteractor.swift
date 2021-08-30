@@ -9,28 +9,19 @@ import Foundation
 import UIKit
 
 class MainScreenInteractor {
-    
-    var company = [Employee]()
+    var networkService: NetworkServiceProtocol!
 }
 extension MainScreenInteractor: MainScreenInteractorInput {
-    func parseJson() {
-        let urlString = "https://run.mocky.io/v3/1d1cb4ec-73db-4762-8c4b-0b8aa3cecd4c"
-        if let url = URL(string: urlString) {
-            if let data = try? Data(contentsOf: url) {
-                parse(json: data)
-            }
-        }
-    }
     
-    func parse(json: Data) {
-        
-        let decoder = JSONDecoder()
-        
-        if let jsonServerQuestion = try? decoder.decode(Company.self, from: json) {
-            company = jsonServerQuestion.employees
-            print(company)
+    func obtainEmployees() {
+        networkService.obtainParcingResult(type: ServerQuestion.self, string: "https://run.mocky.io/v3/1d1cb4ec-73db-4762-8c4b-0b8aa3cecd4c") { answer in
+           // print(answer)
+//            print(answer?.company.name)
+//            print(answer?.company.employees[1].name)
+//            print(answer?.company.employees[1].phoneNumber)
+//            print(answer?.company.employees[1].skills)
+            //ТУТ ЗАХУЯРЬ ОБРАБОТКУ
         }
-        
     }
 }
 

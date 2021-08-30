@@ -11,18 +11,21 @@ class MainScreenAssembly {
     
     static func assemble() -> MainScreenViewController {
         
+        let networkService = NetworkService.shared
+        let tableViewManager = TableViewManager()
+        
         let view = MainScreenViewController()
         let presenter = MainScreenPresenter()
         let interactor = MainScreenInteractor()
         let router = MainScreenRouter()
-        let tableViewManager: TableViewManagerProtocol = TableViewManager(company: interactor.company)
         
         view.presenter = presenter
         presenter.view = view
         presenter.interactor = interactor
         presenter.router = router
+        presenter.tableViewManager = tableViewManager
+        interactor.networkService = networkService
         router.view = view
-        presenter.tableViewManager = tableViewManager as! TableViewManager
         
         return view
     }

@@ -25,7 +25,7 @@ struct Employee: Codable {
 
     enum CodingKeys: String, CodingKey {
         case name
-        case phoneNumber
+        case phoneNumber = "phone_number"
         case skills
     }
 }

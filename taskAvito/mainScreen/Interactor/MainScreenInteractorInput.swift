@@ -8,6 +8,6 @@
 import UIKit
 
 protocol MainScreenInteractorInput: AnyObject {
-    func parseJson()
+    func obtainEmployees()
 }
 

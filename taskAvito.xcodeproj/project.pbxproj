@@ -16,6 +16,10 @@
 		0113F4E626D66ED900EDA6D0 /* LocalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0113F4E526D66ED900EDA6D0 /* LocalModel.swift */; };
 		0113F4E826D66F6A00EDA6D0 /* MainScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0113F4E726D66F6A00EDA6D0 /* MainScreenRouter.swift */; };
 		0113FAFD26D9460500495726 /* ServerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0113FAFC26D9460500495726 /* ServerModel.swift */; };
+		01158F2F26DCEE1F00275983 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01158F2E26DCEE1F00275983 /* Networking.swift */; };
+		01AD6F5A26DD00570092C5C1 /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AD6F5926DD00570092C5C1 /* UIStackView.swift */; };
+		01AD6F5C26DD007F0092C5C1 /* UILable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AD6F5B26DD007F0092C5C1 /* UILable.swift */; };
+		01AD6F5E26DD00CA0092C5C1 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AD6F5D26DD00CA0092C5C1 /* Cell.swift */; };
 		01D7DA6C26D791E900E6842A /* MainScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D7DA6B26D791E900E6842A /* MainScreenAssembly.swift */; };
 		01D7DA6E26D7922600E6842A /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D7DA6D26D7922600E6842A /* MainScreenViewController.swift */; };
 		01D7DA7026D7926600E6842A /* MainScreenViewControllerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D7DA6F26D7926600E6842A /* MainScreenViewControllerInput.swift */; };
@@ -38,6 +42,10 @@
 		0113F4E526D66ED900EDA6D0 /* LocalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalModel.swift; sourceTree = "<group>"; };
 		0113F4E726D66F6A00EDA6D0 /* MainScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenRouter.swift; sourceTree = "<group>"; };
 		0113FAFC26D9460500495726 /* ServerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerModel.swift; sourceTree = "<group>"; };
+		01158F2E26DCEE1F00275983 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		01AD6F5926DD00570092C5C1 /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIStackView.swift; path = taskAvito/MainScreen/Extensions/UIkit/UIStackView.swift; sourceTree = SOURCE_ROOT; };
+		01AD6F5B26DD007F0092C5C1 /* UILable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UILable.swift; path = taskAvito/MainScreen/Extensions/UIkit/UILable.swift; sourceTree = SOURCE_ROOT; };
+		01AD6F5D26DD00CA0092C5C1 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Cell.swift; path = taskAvito/MainScreen/View/Cell.swift; sourceTree = SOURCE_ROOT; };
 		01D7DA6B26D791E900E6842A /* MainScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenAssembly.swift; sourceTree = "<group>"; };
 		01D7DA6D26D7922600E6842A /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		01D7DA6F26D7926600E6842A /* MainScreenViewControllerInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewControllerInput.swift; sourceTree = "<group>"; };
@@ -94,6 +102,7 @@
 			children = (
 				01D7DA6D26D7922600E6842A /* MainScreenViewController.swift */,
 				01D7DA6F26D7926600E6842A /* MainScreenViewControllerInput.swift */,
+				01AD6F5D26DD00CA0092C5C1 /* Cell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -145,13 +154,32 @@
 			isa = PBXGroup;
 			children = (
 				0113FAFC26D9460500495726 /* ServerModel.swift */,
+				01158F2E26DCEE1F00275983 /* Networking.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		01AD6F5726DCFFEC0092C5C1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				01AD6F5826DD00170092C5C1 /* UIkit */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		01AD6F5826DD00170092C5C1 /* UIkit */ = {
+			isa = PBXGroup;
+			children = (
+				01AD6F5926DD00570092C5C1 /* UIStackView.swift */,
+				01AD6F5B26DD007F0092C5C1 /* UILable.swift */,
+			);
+			path = UIkit;
 			sourceTree = "<group>";
 		};
 		01D7DA6926D790A700E6842A /* mainScreen */ = {
 			isa = PBXGroup;
 			children = (
+				01AD6F5726DCFFEC0092C5C1 /* Extensions */,
 				0113F4DD26D66D2B00EDA6D0 /* Router */,
 				0113F4DB26D66CA100EDA6D0 /* Entity */,
 				0113F4DC26D66CC300EDA6D0 /* Presenter */,
@@ -252,14 +280,18 @@
 			files = (
 				0113F4E826D66F6A00EDA6D0 /* MainScreenRouter.swift in Sources */,
 				0113F4E126D66DF900EDA6D0 /* MainScreenInteractor.swift in Sources */,
+				01AD6F5C26DD007F0092C5C1 /* UILable.swift in Sources */,
 				01D7DA7426D792FD00E6842A /* MainScreenPresenter.swift in Sources */,
 				01D7DA7026D7926600E6842A /* MainScreenViewControllerInput.swift in Sources */,
+				01AD6F5E26DD00CA0092C5C1 /* Cell.swift in Sources */,
 				01D7DA7B26D793DB00E6842A /* TableViewManagerProtocol.swift in Sources */,
 				01D7DA7226D792C100E6842A /* MainScreenInteractorInput.swift in Sources */,
+				01158F2F26DCEE1F00275983 /* Networking.swift in Sources */,
 				01D7DA7626D7932A00E6842A /* MainScreenPresenterProtocol.swift in Sources */,
 				01D7DA6E26D7922600E6842A /* MainScreenViewController.swift in Sources */,
 				0113FAFD26D9460500495726 /* ServerModel.swift in Sources */,
 				01D7DA7926D793BC00E6842A /* TableViewManager.swift in Sources */,
+				01AD6F5A26DD00570092C5C1 /* UIStackView.swift in Sources */,
 				0113F4C526D6475900EDA6D0 /* AppDelegate.swift in Sources */,
 				0113F4C726D6475900EDA6D0 /* SceneDelegate.swift in Sources */,
 				0113F4E626D66ED900EDA6D0 /* LocalModel.swift in Sources */,
